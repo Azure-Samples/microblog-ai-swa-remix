@@ -28,7 +28,8 @@
 				"bradlc.vscode-tailwindcss",
 				"ms-azuretools.vscode-azurestaticwebapps",
 				"GitHub.copilot-chat",
-				"ms-azuretools.vscode-azure-github-copilot"
+				"ms-azuretools.vscode-azure-github-copilot",
+				"ms-azuretools.vscode-azureresourcegroups"
 			]
 		}
 	}
