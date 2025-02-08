@@ -180,14 +180,14 @@ Here is an example of the Microblog AI project in action:
 To run this application locally, follow these steps:
 
 1. **Fork the Repository**:
-   - Visit [glaucia86/microblog-ai](https://github.com/glaucia86/microblog-ai) and click the "Fork" button to create a copy of the project in your GitHub account.
+   - Visit [https://github.com/Azure-Samples/microblog-ai-swa-remix](https://github.com/Azure-Samples/microblog-ai-swa-remix) and click the "Fork" button to create a copy of the project in your GitHub account.
 
 2. **Clone the Forked Repository**:
    - Clone the forked repository to your local environment and navigate to the project directory:
 
 ```bash
 git clone <your-fork-url>
-cd microblog-ai
+cd microblog-ai-swa-remix
 ```
 
 3. **Install Dependencies:**
@@ -298,7 +298,7 @@ For more information on deploying an LLM model in Azure Foundry, refer to the [o
 
 ## Contribution
 
-Contributions are welcome! Feel free to open issues and pull requests for improvements, bug fixes, or new features.
+Contributions are welcome! Feel free to open **[issues](https://github.com/Azure-Samples/microblog-ai-swa-remix/issues)** and **[pull requests for improvements](https://github.com/Azure-Samples/microblog-ai-swa-remix/pulls)**, bug fixes, or new features.
 
 ## License
 
