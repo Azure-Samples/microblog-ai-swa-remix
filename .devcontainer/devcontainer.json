@@ -1,0 +1,45 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
+{
+	"name": "Remix TypeScript Development",
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bookworm",
+	"features": {
+		"ghcr.io/devcontainers/features/azure-cli:1": {
+			"version": "latest",
+			"installBicep": true
+		},
+		"ghcr.io/devcontainers/features/github-cli:1": {},
+		"ghcr.io/devcontainers/features/powershell:1": {},
+		"ghcr.io/azure/azure-dev/azd:latest": {}
+	},
+	"forwardPorts": [
+		3000,
+		5173
+	],
+	"postCreateCommand": "npm install",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-azuretools.azure-dev",
+				"ms-azuretools.vscode-bicep",
+				"GitHub.copilot",
+				"dbaeumer.vscode-eslint",
+				"esbenp.prettier-vscode",
+				"bradlc.vscode-tailwindcss",
+				"ms-azuretools.vscode-azurestaticwebapps",
+				"GitHub.copilot-chat",
+				"ms-azuretools.vscode-azure-github-copilot"
+			]
+		}
+	}
+}
+// Features to add to the dev container. More info: https://containers.dev/features.
+// "features": {},
+// Use 'forwardPorts' to make a list of ports inside the container available locally.
+// "forwardPorts": [],
+// Use 'postCreateCommand' to run commands after the container is created.
+// "postCreateCommand": "yarn install",
+// Configure tool-specific properties.
+// "customizations": {},
+// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+// "remoteUser": "root"
