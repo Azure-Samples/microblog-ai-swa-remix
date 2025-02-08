@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  lint-and-build:
+  lint-and-build-checks:
     name: Run Lint & Build Checks
     runs-on: ubuntu-latest
 
