@@ -1,0 +1,28 @@
+{
+  "name": "microblog-ai-server",
+  "version": "1.0.0",
+  "description": "Azure Functions Backend with Remix, Azure Static Web Apps and OpenAI",
+  "main": "./dist/src/functions/ssr.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "clean": "rimraf dist",
+    "prestart": "npm run clean && npm run build",
+    "dev": "npm run clean && npm run build && npm run start",
+    "start": "func start",
+    "prebuild": "npm run clean",
+    "test": "echo \"No tests yet...\""
+  },
+  "dependencies": {
+    "@azure/functions": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.x",
+    "rimraf": "^5.0.0",
+    "typescript": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
