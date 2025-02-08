@@ -193,7 +193,16 @@ cd microblog-ai
 3. **Install Dependencies:**
    - Install all project dependencies using npm:
 
+* in the root folder:
+
 ```bash
+npm install
+```
+
+And then in the `server` folder:
+
+```bash
+cd server 
 npm install
 ```
 
