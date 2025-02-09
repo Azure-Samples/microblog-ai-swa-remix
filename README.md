@@ -1,5 +1,7 @@
 [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/10005/badge)](https://www.bestpractices.dev/projects/10005)
 
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Azure-Samples/microblog-ai-swa-remix)
+
 # Microblog AI
 
 Microblog AI is an application that showcases the power of Azure Static Web Apps combined with Azure Functions and Server-Side Rendering (SSR) using Remix. The application leverages Azure OpenAI's GPT-4o artificial intelligence to enable the creation of microblogs in a simple and intuitive way.
@@ -178,6 +180,10 @@ Here is an example of the Microblog AI project in action:
 > **Note**: This project uses Azure Functions v4 programming model, which requires Node.js versions up to 20.x for compatibility.
 
 ## Installation
+
+> **Note**: You can use GitHub Codespaces to run this application without any local setup. Click the "Code" button and select "Open with Codespaces" to get started. Or just click in the button below:
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Azure-Samples/microblog-ai-swa-remix)
 
 To run this application locally, follow these steps:
 
