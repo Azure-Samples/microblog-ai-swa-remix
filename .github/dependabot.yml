@@ -5,7 +5,7 @@ updates:
     schedule:
       interval: 'weekly'
     assignees:
-      - 'gllemos'
+      - 'glaucia86'
     labels:
       - 'dependencies'
       - 'security'
