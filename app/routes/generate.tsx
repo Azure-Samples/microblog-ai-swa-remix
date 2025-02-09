@@ -1,11 +1,10 @@
-import { ActionFunction, json } from '@remix-run/node';
+import { ActionFunction } from '@remix-run/node';
 import { Form, useActionData, useNavigation } from '@remix-run/react';
-import { useEffect, useState } from 'react';
+import { useEffect, useState , Suspense, lazy } from 'react';
 import ToneSelector from '~/components/ToneSelector';
 import EnhancedTextInput from '~/components/EnhancedTextInput';
 import { azureOpenAIService } from '../services/openaiService';
 
-import { Suspense, lazy } from 'react';
 
 const PreviewCard = lazy(() => import('~/components/PreviewCard'));
 const SuccessNotification = lazy(
