@@ -24,8 +24,12 @@ module.exports = {
   // Base config
   extends: [
     'eslint:recommended',
-    '@remix-run/eslint-config',
-    '@remix-run/eslint-config/node',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:jsx-a11y/recommended',
+    'plugin:import/recommended',
+    'plugin:import/typescript',
   ],
 
   overrides: [
@@ -33,12 +37,6 @@ module.exports = {
     {
       files: ['**/*.{js,jsx,ts,tsx}'],
       plugins: ['react', 'jsx-a11y'],
-      extends: [
-        'plugin:react/recommended',
-        'plugin:react/jsx-runtime',
-        'plugin:react-hooks/recommended',
-        'plugin:jsx-a11y/recommended',
-      ],
       settings: {
         react: {
           version: 'detect',
@@ -70,11 +68,6 @@ module.exports = {
           },
         },
       },
-      extends: [
-        'plugin:@typescript-eslint/recommended',
-        'plugin:import/recommended',
-        'plugin:import/typescript',
-      ],
     },
 
     // Node
@@ -86,6 +79,7 @@ module.exports = {
     },
   ],
   rules: {
+    'react/react-in-jsx-scope': 'off',
     'import/no-unresolved': [
       'error',
       {
@@ -95,5 +89,6 @@ module.exports = {
         ],
       },
     ],
+    '@typescript-eslint/no-unused-vars': ['error'],
   },
 };

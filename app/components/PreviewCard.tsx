@@ -12,9 +12,9 @@ export default function PreviewCard() {
             Technical Tone:
           </span>
           <blockquote className='mt-2 text-gray-600 dark:text-gray-300 border-l-4 border-blue-500 pl-4'>
-            "Exploring the latest developments in #AI: Recent breakthroughs in
+            &quot;Exploring the latest developments in #AI: Recent breakthroughs in
             large language models demonstrate significant improvements in
-            natural language understanding..."
+            natural language understanding...&quot;
           </blockquote>
         </div>
 

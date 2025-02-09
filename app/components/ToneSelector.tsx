@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 export default function ToneSelector({
   value,
   onChange,

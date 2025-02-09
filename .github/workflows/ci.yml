@@ -1,0 +1,29 @@
+name: CI Checks
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint-and-build-checks:
+    name: Run Lint & Build Checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Lint
+        run: npm run lint
+
+      - name: Build Project
+        run: npm run build:all
