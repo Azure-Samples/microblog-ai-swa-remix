@@ -1,10 +1,9 @@
 import { ActionFunction } from '@remix-run/node';
 import { Form, useActionData, useNavigation } from '@remix-run/react';
-import { useEffect, useState , Suspense, lazy } from 'react';
+import { useEffect, useState, Suspense, lazy } from 'react';
 import ToneSelector from '~/components/ToneSelector';
 import EnhancedTextInput from '~/components/EnhancedTextInput';
 import { azureOpenAIService } from '../services/openaiService';
-
 
 const PreviewCard = lazy(() => import('~/components/PreviewCard'));
 const SuccessNotification = lazy(
@@ -117,7 +116,7 @@ export default function Generate() {
               label='Topic or Main Idea'
               name='topic'
               value={formState.topic}
-              onChange={(e) =>
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                 setFormState({ ...formState, topic: e.target.value })
               }
               placeholder='Enter a topic'
@@ -126,13 +125,15 @@ export default function Generate() {
             />
             <ToneSelector
               value={formState.tone as ToneOfVoice}
-              onChange={(tone) => setFormState({ ...formState, tone })}
+              onChange={(tone: ToneOfVoice) =>
+                setFormState({ ...formState, tone })
+              }
             />
             <EnhancedTextInput
               label='Keywords (optional)'
               name='keywords'
               value={formState.keywords}
-              onChange={(e) =>
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                 setFormState({ ...formState, keywords: e.target.value })
               }
               placeholder='Enter keywords, separated by commas'
