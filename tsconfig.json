@@ -1,47 +1,49 @@
 {
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~/*": [
+        "./app/*"
+      ],
+    },
+    "typeRoots": [
+      "./node_modules/@types",
+      "./types"
+    ],
+    "target": "ES2022",
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ES2022"
+    ],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowJs": true,
+    "noEmit": true,
+    "incremental": true,
+    "composite": true,
+    "strict": true,
+    "jsx": "react-jsx",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "outDir": "./dist",
+    "forceConsistentCasingInFileNames": true
+  },
   "include": [
-    "app/**/*.ts",
-    "app/**/*.tsx",
-    "app/.server/**/*.ts",
-    "app/.server/**/*.tsx",
-    "app/.client/**/*.ts",
-    "app/.client/**/*.tsx"
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
+    "server/src/**/*.ts",
+    "vite.config.ts",
+    "types/**/*.d.ts",
+    "tailwind.config.ts"
   ],
   "exclude": [
     "node_modules",
-    "server/**/*.ts",
-    "server/**/*.tsx"
-  ],
-  "compilerOptions": {
-    // Runtime environment configuration
-    "lib": ["DOM", "DOM.Iterable", "ES2022"],
-    "target": "ES2022",
-    "module": "ESNext",
-    
-    // Module resolution
-    "moduleResolution": "Bundler",
-    "baseUrl": ".",
-    "paths": {
-      "~/*": ["./app/*"]
-    },
-    "resolveJsonModule": true,
-    
-    // React configuration
-    "jsx": "react-jsx",
-    
-    // Type checking and compilation
-    "strict": true,
-    "isolatedModules": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "allowJs": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-
-    // Types configuration
-    "types": [
-      "node",
-      "vite/client"
-    ]
-  }
+    "build",
+    "public/build"
+  ]
 }
