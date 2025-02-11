@@ -1,12 +1,12 @@
+import React from 'react';
 import { Link } from '@remix-run/react';
 
-export default function CTAButton({
-  to,
-  children,
-}: {
+interface CTAButtonProps {
   to: string;
   children: React.ReactNode;
-}) {
+}
+
+export default function CTAButton({ to, children }: CTAButtonProps) {
   return (
     <Link
       to={to}
