@@ -18,6 +18,9 @@ export default [
       'public/build/**',
       '**/.*',
       'server/dist/**',
+      'server/src/functions/ssr.ts',
+      'tailwind.config.ts',
+      'vite.config.ts',
     ],
   },
 
