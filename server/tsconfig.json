@@ -5,6 +5,10 @@
     "lib": [
       "es2022"
     ],
+    "typeRoots": [
+      "./node_modules/@types",
+      "./types"
+    ],
     "outDir": "dist",
     "rootDir": ".",
     "sourceMap": true,
@@ -20,7 +24,8 @@
     "forceConsistentCasingInFileNames": true
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "../types/**/*.d.ts"
   ],
   "exclude": [
     "node_modules",
