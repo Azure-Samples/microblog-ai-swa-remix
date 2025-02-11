@@ -1,3 +1,4 @@
+import React from 'react';
 import CharacterCounter from './CharacterCounter';
 
 export default function EnhancedTextInput({
