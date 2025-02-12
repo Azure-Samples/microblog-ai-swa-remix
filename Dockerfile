@@ -6,7 +6,6 @@ ARG AZURE_OPENAI_API_KEY
 ARG AZURE_OPENAI_ENDPOINT
 ARG AZURE_OPENAI_DEPLOYMENT_NAME
 ARG AZURE_OPENAI_API_VERSION
-ARG NODE_ENV=production
 ARG NEXT_TELEMETRY_DISABLED=1
 
 # Set environment variables for build stage
@@ -14,15 +13,15 @@ ENV AZURE_OPENAI_API_KEY=${AZURE_OPENAI_API_KEY} \
     AZURE_OPENAI_ENDPOINT=${AZURE_OPENAI_ENDPOINT} \
     AZURE_OPENAI_DEPLOYMENT_NAME=${AZURE_OPENAI_DEPLOYMENT_NAME} \
     AZURE_OPENAI_API_VERSION=${AZURE_OPENAI_API_VERSION} \
-    NODE_ENV=${NODE_ENV} \
+    NODE_ENV=development \ 
     NEXT_TELEMETRY_DISABLED=${NEXT_TELEMETRY_DISABLED}
 
 WORKDIR /app
 
-# Install rimraf globally to avoid errors
+# Instalar rimraf globalmente para evitar erros
 RUN npm install -g rimraf
 
-# Copy package files and install dependencies
+# Copiar arquivos de dependência e instalar todas as dependências (incluindo devDependencies)
 COPY package*.json ./ 
 COPY server/package*.json ./server/
 
@@ -31,10 +30,10 @@ RUN npm ci && \
     npm ci && \
     cd ..
 
-# Copy source code and build
+# Copiar o restante dos arquivos
 COPY . .
 
-# Install dependencies and build
+# Rodar o build
 RUN npm run build:all
 
 # Production stage
@@ -50,13 +49,13 @@ ENV AZURE_OPENAI_API_KEY=${AZURE_OPENAI_API_KEY} \
 
 WORKDIR /app
 
-# Copy built files from builder stage
+# Copiar arquivos necessários da fase de build
 COPY --from=builder /app/build ./build
 COPY --from=builder /app/server/dist ./server/dist
 COPY --from=builder /app/package*.json ./ 
 COPY --from=builder /app/server/package*.json ./server/
 
-# Install production dependencies and clean up
+# Instalar apenas as dependências de produção
 RUN npm ci --only=production && \
     cd server && \
     npm ci --only=production && \
