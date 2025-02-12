@@ -12,7 +12,11 @@
     "dev:function": "cd server && npm run build && npm run start",
     "clean": "rimraf build && rimraf server/dist",
     "lint": "eslint . --cache --cache-location ./node_modules/.cache/eslint",
-    "start": "remix-serve ./build/server/index.js",
+    "start": "node --expose-gc ./build/server/index.js",
+    "start:dev": "remix-serve ./build/server/index.js",
+    "docker:build": "docker build -t microblog-ai .",
+    "docker:run": "docker run -p 3000:3000 microblog-ai",
+    "docker:test": "npm run docker:build && npm run docker:run",
     "typecheck": "tsc",
     "deploy": "npm run build:all && swa deploy"
   },
