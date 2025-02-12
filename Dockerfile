@@ -19,9 +19,13 @@ ENV AZURE_OPENAI_API_KEY=${AZURE_OPENAI_API_KEY} \
 
 WORKDIR /app
 
+# Install rimraf globally to avoid errors
+RUN npm install -g rimraf
+
 # Copy package files and install dependencies
-COPY package*.json ./
+COPY package*.json ./ 
 COPY server/package*.json ./server/
+
 RUN npm ci && \
     cd server && \
     npm ci && \
@@ -29,6 +33,8 @@ RUN npm ci && \
 
 # Copy source code and build
 COPY . .
+
+# Install dependencies and build
 RUN npm run build:all
 
 # Production stage
@@ -47,7 +53,7 @@ WORKDIR /app
 # Copy built files from builder stage
 COPY --from=builder /app/build ./build
 COPY --from=builder /app/server/dist ./server/dist
-COPY --from=builder /app/package*.json ./
+COPY --from=builder /app/package*.json ./ 
 COPY --from=builder /app/server/package*.json ./server/
 
 # Install production dependencies and clean up
