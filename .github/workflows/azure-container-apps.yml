@@ -1,7 +1,9 @@
-name: Build and Deploy to Azure Container Apps
+name: 'Azure Container Apps CD'
 
 on:
   push:
+    branches: ['main']
+  pull_request:
     branches: ['main']
   workflow_dispatch:
 
