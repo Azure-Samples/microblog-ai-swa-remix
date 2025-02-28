@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Run Scorecard Security Check
-        uses: ossf/scorecard-action@v2
+        uses: ossf/scorecard-action@62b2cac7ed8198b15735ed49ab1e5cf35480ba46
         with:
           repo: ${{ github.repository }}
           results_file: results.sarif
