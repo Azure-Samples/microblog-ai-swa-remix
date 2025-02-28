@@ -99,7 +99,7 @@ export default function Generate() {
         {/* Header */}
         <div className='text-center mb-12'>
           <h1
-            className='text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r 
+            className='text-4xl font-bold bg-clip-text text-transparent bg-linear-to-r 
             from-gray-900 to-gray-700 dark:from-white dark:to-gray-200'
           >
             Generate Your Microblog
@@ -158,7 +158,7 @@ export default function Generate() {
 
           {/* Display the content returned by the API */}
           {actionData?.success && actionData.content && (
-            <div className='mt-8 p-4 rounded bg-green-50 border border-green-200'>
+            <div className='mt-8 p-4 rounded-sm bg-green-50 border border-green-200'>
               <h2 className='text-lg font-bold mb-2'>Microblog generated</h2>
               <p>
                 <strong>Text:</strong> {actionData.content.mainContent}

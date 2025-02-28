@@ -3,7 +3,7 @@ import { SparklesIcon } from '@heroicons/react/24/outline';
 export default function LoadingOverlay() {
   return (
     <div
-      className='fixed inset-0 bg-black/20 dark:bg-black/40 backdrop-blur-sm 
+      className='fixed inset-0 bg-black/20 dark:bg-black/40 backdrop-blur-xs 
       flex items-center justify-center z-50'
     >
       <div

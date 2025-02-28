@@ -1,15 +1,44 @@
 html,
 body {
-  @apply bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-200;
+  background-color: var(--color-white);
+  color: var(--color-gray-900);
+}
+
+:is(html, body):where(.dark) {
+  background-color: var(--color-gray-950);
+  color: var(--color-gray-200);
 }
 
 h1,
 h2,
 h3,
 h4 {
-  @apply font-bold text-gray-900 dark:text-white;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-gray-900);
+}
+
+:is(h1, h2, h3, h4):where(.dark) {
+  color: var(--color-white);
 }
 
 a {
-  @apply text-blue-600 hover:underline dark:text-blue-400;
+  color: var(--color-blue-600);
+}
+
+/* Apply underline only to non-button links */
+a:not([class*='bg-']):not([class*='button']):hover {
+  text-decoration: underline;
+}
+
+a:where(.dark) {
+  color: var(--color-blue-400);
+}
+
+/* Add this to ensure button-style links have proper hover text color */
+a[class*='bg-'] {
+  text-decoration: none;
+}
+
+a[class*='bg-']:hover {
+  text-decoration: none;
 }

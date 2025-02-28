@@ -35,7 +35,7 @@ export default function PreviewCard() {
                 key={index}
                 className='flex items-center text-sm text-gray-600 dark:text-gray-400'
               >
-                <SparklesIcon className='w-4 h-4 text-blue-500 mr-2 flex-shrink-0' />
+                <SparklesIcon className='w-4 h-4 text-blue-500 mr-2 shrink-0' />
                 {feature}
               </li>
             ))}
